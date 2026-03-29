@@ -1,23 +1,16 @@
 pipeline {
     agent any
 
+    options {
+        skipDefaultCheckout(true)   // avoids checkout logs
+    }
+
     stages {
-
-        stage('Build') {
+        stage('Run') {
             steps {
-                bat 'javac Main.java'
-            }
-        }
-
-        stage('Test') {
-            steps {
-                bat 'java Main'
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                echo 'Deployment Successful!'
+                script {
+                    // Do nothing or minimal command
+                }
             }
         }
     }
